@@ -6,6 +6,7 @@ use App\Http\Controllers\Kendaraan\ServiceKendaraan;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\MotorController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('kendaraan',KendaraanController::class);
 Route::apiResource('mobil',MobilController::class);
 Route::apiResource('motor',MotorController::class);
+Route::apiResource('penjualan',PenjualanController::class);

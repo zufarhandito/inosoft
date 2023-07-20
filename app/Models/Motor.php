@@ -6,6 +6,6 @@ use Jenssegers\Mongodb\Eloquent\Model;
 
 class Motor extends Model
 {
-        protected $collection = 'motor';
+        protected $collection = 'Motor';
         protected $connection = 'mongodb';
 }

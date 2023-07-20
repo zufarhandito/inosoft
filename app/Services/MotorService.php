@@ -15,7 +15,7 @@ class MotorService {
         return $this->motorRepository->getAllMotor();
     }
 
-    // protected function findAllStock($type){
-
-    // }
+    public function findAllStock($id){
+        return $this->motorRepository->getStockMotor($id);
+    }
 }

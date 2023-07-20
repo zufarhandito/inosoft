@@ -8,4 +8,5 @@ class Mobil extends Model
 {
     protected $collection = 'Mobil';
     protected $connection = 'mongodb';
+    protected $fillable = ['stock'];
 }

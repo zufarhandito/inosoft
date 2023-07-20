@@ -14,4 +14,10 @@ class MotorRepository extends KendaraanRepository{
         $dataMotor = parent::getAll(Motor::class);
         return $dataMotor;
     }
+
+    public function getStockMotor($id)
+    {
+        $stock = parent::getStock(Motor::class,$id);
+        return $stock;
+    }
 }

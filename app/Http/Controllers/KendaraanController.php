@@ -12,22 +12,13 @@ class KendaraanController extends Controller
     public function __construct(KendaraanService $kendaraanService) {
         $this->kendaraanService = $kendaraanService;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $kendaraans = $this->kendaraanService->findAllKendaraan();
         return response()->json($kendaraans);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //

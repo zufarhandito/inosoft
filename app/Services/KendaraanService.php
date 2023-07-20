@@ -6,9 +6,9 @@ use App\Repositories\KendaraanRepository;
 
 class KendaraanService {
     private $kendaraanRepository;
-    protected $tahunKeluaran;
-    protected $warna;
-    protected $harga;
+    // protected $tahunKeluaran;
+    // protected $warna;
+    // protected $harga;
 
     public function __construct(KendaraanRepository $kendaraanRepository) {
         $this->kendaraanRepository = $kendaraanRepository;

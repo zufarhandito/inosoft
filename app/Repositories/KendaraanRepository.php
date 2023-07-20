@@ -6,13 +6,26 @@ use Illuminate\Http\Request;
 use App\Models\Kendaraan;
 
 class KendaraanRepository {
-        /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getAll()
+
+    public function getAll($model = null)
     {
-        return Kendaraan::all();
+        $dataKendaraan = $model::all();
+
+        //Jika tidak ada, ya 404
+        if(count($dataKendaraan)=== 0){
+            return response()->json(['message' => 'Kendaraan tidak ditemukan'], 404);
+        }
+
+        return $dataKendaraan;
+    }
+
+    public function getStock($model,$id){
+        $dataKendaraan = $model::find($id);
+
+        if(!$dataKendaraan){
+            return response()->json(['message' => 'Kendaraan tidak ditemukan'], 404);
+        }
+
+        return $dataKendaraan->stock;
     }
 }

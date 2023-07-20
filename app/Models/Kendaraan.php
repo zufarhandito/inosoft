@@ -6,6 +6,6 @@ use Jenssegers\Mongodb\Eloquent\Model;
 
 class Kendaraan extends Model
 {
-    protected $collection = 'kendaraan';
+    protected $collection = 'Kendaraan';
     protected $connection = 'mongodb';
 }

@@ -3,31 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\KendaraanService;
+use App\Services\MobilService;
 
-class KendaraanController extends Controller
+class MobilController extends Controller
 {
-    protected $kendaraanService;
+    protected $mobilService;
 
-    public function __construct(KendaraanService $kendaraanService) {
-        $this->kendaraanService = $kendaraanService;
+    public function __construct(MobilService $mobilService) {
+        $this->mobilService = $mobilService;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $kendaraans = $this->kendaraanService->findAllKendaraan();
-        return response()->json($kendaraans);
+        $mobils = $this->mobilService->findAll();
+        return response()->json($mobils);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
@@ -52,7 +43,8 @@ class KendaraanController extends Controller
      */
     public function show($id)
     {
-        //
+        $stock = $this->mobilService->findAllStock($id);
+        return response()->json($stock);
     }
 
     /**

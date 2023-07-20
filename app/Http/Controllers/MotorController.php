@@ -3,24 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\KendaraanService;
+use App\Services\MotorService;
 
-class KendaraanController extends Controller
+class MotorController extends Controller
 {
-    protected $kendaraanService;
+    protected $motorService;
 
-    public function __construct(KendaraanService $kendaraanService) {
-        $this->kendaraanService = $kendaraanService;
+    public function __construct(MotorService $motorService) {
+        $this->motorService = $motorService;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $kendaraans = $this->kendaraanService->findAllKendaraan();
-        return response()->json($kendaraans);
+        $motors = $this->motorService->findAll();
+        return response()->json($motors);
     }
 
     /**
